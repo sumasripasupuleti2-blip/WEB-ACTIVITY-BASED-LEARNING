@@ -1,0 +1,1332 @@
+
+/* =====================================
+   MEDICARE+ HOSPITAL WEBSITE
+   Theme: Navy Blue, Teal and White
+   ===================================== */
+
+/* 1. Global Styles */
+:root {
+    --primary: #087F8C;
+    --primary-dark: #066570;
+    --navy: #10354A;
+    --text: #344F5E;
+    --muted: #718694;
+    --background: #F4FAFC;
+    --white: #FFFFFF;
+    --border: #DDE9ED;
+    --accent: #DDF3F1;
+    --shadow: 0 12px 35px rgba(16, 53, 74, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #E4A84C;
+    outline-offset: 4px;
+}
+
+.container {
+    width: min(1160px, 90%);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.section-light {
+    background: var(--background);
+}
+
+.section-dark {
+    background: var(--navy);
+}
+
+/* 2. Top Information Bar */
+.topbar {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 13px;
+    padding: 8px 0;
+}
+
+.topbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar a {
+    color: #8CE0D8;
+    font-weight: 700;
+}
+
+.separator {
+    margin: 0 8px;
+    opacity: 0.6;
+}
+
+/* 3. Header and Navigation */
+.header {
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px rgba(16, 53, 74, 0.06);
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--navy);
+    font-size: 26px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo > span:last-child {
+    color: var(--primary);
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 23px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 21px;
+}
+
+.nav-links a {
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* 4. Buttons */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 13px 23px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(8, 127, 140, 0.18);
+}
+
+.btn-small {
+    padding: 10px 16px;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--border);
+}
+
+.btn-outline:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--primary-dark);
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* 5. Hero Section */
+.hero {
+    padding: 76px 0 90px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 90% 10%, #DDF3F1 0, transparent 30%),
+        linear-gradient(135deg, #F5FAFC 0%, #FFFFFF 70%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    color: var(--navy);
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-text > p {
+    max-width: 550px;
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    margin-top: 28px;
+    font-size: 12px;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.hero-points span::first-letter {
+    color: var(--primary);
+}
+
+.hero-image {
+    position: relative;
+    min-width: 0;
+}
+
+.hero-image > img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.image-note {
+    position: absolute;
+    left: -25px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: var(--white);
+    padding: 17px 21px;
+    border-radius: 13px;
+    box-shadow: var(--shadow);
+}
+
+.note-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--accent);
+    color: var(--primary);
+    font-size: 26px;
+}
+
+.image-note strong {
+    color: var(--navy);
+}
+
+.image-note p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* 6. Quick Information Cards */
+.quick-info {
+    padding: 0 0 35px;
+    margin-top: -5px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 17px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    box-shadow: 0 5px 20px rgba(16, 53, 74, 0.04);
+}
+
+.info-icon {
+    min-width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: var(--primary);
+    border-radius: 12px;
+    font-size: 24px;
+}
+
+.info-card h3 {
+    color: var(--navy);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.info-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* 7. Section Headings */
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 48px;
+}
+
+.section-heading h2,
+.about-content h2,
+.contact-content h2,
+.appointment-info h2 {
+    color: var(--navy);
+    font-size: clamp(29px, 3.5vw, 40px);
+    line-height: 1.25;
+    letter-spacing: -0.6px;
+    margin-bottom: 17px;
+}
+
+.section-heading > p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.light-heading h2 {
+    color: var(--white);
+}
+
+.light-heading > p {
+    color: #C4D8E1;
+}
+
+.light-heading .eyebrow {
+    color: #8CE0D8;
+}
+
+/* 8. About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image > img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.about-badge {
+    position: absolute;
+    right: -22px;
+    bottom: 25px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 18px 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    box-shadow: var(--shadow);
+}
+
+.about-badge span {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.about-content > p {
+    color: var(--muted);
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+.check-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.check-list li {
+    position: relative;
+    padding: 7px 0 7px 30px;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 21px;
+    height: 21px;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: var(--primary-dark);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* 9. Department Cards */
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.department-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 29px;
+    border-radius: 15px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+    border-color: #A6DCD8;
+}
+
+.card-icon {
+    width: 57px;
+    height: 57px;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: var(--primary);
+    border-radius: 14px;
+    font-size: 29px;
+    margin-bottom: 21px;
+}
+
+.department-card h3 {
+    color: var(--navy);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.department-card p {
+    color: var(--muted);
+    font-size: 14px;
+    min-height: 72px;
+}
+
+/* 10. Doctor Cards */
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.doctor-card {
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.doctor-card > img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center top;
+    background: var(--accent);
+}
+
+.doctor-details {
+    text-align: center;
+    padding: 24px 18px 27px;
+}
+
+.doctor-tag {
+    display: inline-block;
+    color: var(--primary-dark);
+    background: var(--accent);
+    border-radius: 30px;
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.doctor-details h3 {
+    color: var(--navy);
+    font-size: 21px;
+    margin-top: 13px;
+}
+
+.doctor-details p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.btn-doctor {
+    padding: 10px 14px;
+    font-size: 12px;
+}
+
+.demo-note {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* 11. Facilities */
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.facility-card {
+    padding: 28px 22px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 15px;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.facility-card:hover {
+    background: rgba(255, 255, 255, 0.11);
+    transform: translateY(-5px);
+}
+
+.facility-icon {
+    width: 53px;
+    height: 53px;
+    display: grid;
+    place-items: center;
+    color: #8CE0D8;
+    background: rgba(140, 224, 216, 0.12);
+    border-radius: 13px;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.facility-card h3 {
+    color: var(--white);
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.facility-card p {
+    color: #C4D8E1;
+    font-size: 13px;
+}
+
+/* 12. Visiting Hours and Contact */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-content > p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 27px;
+}
+
+.hours-card {
+    padding: 27px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--background);
+}
+
+.hours-card h3 {
+    color: var(--navy);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.hours-card h3 span {
+    color: var(--primary);
+    margin-right: 8px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.hours-row strong {
+    color: var(--navy);
+    text-align: right;
+}
+
+.hours-row .open-label {
+    color: var(--primary-dark);
+}
+
+.small-note {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 18px;
+}
+
+.contact-card {
+    padding: 34px;
+    background: var(--navy);
+    border-radius: 17px;
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.contact-card > h3 {
+    font-size: 27px;
+    margin-bottom: 7px;
+}
+
+.contact-intro {
+    color: #C4D8E1;
+    font-size: 13px;
+    margin-bottom: 27px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 17px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.contact-icon {
+    min-width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: rgba(140, 224, 216, 0.12);
+    color: #8CE0D8;
+    border-radius: 11px;
+    font-size: 22px;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.contact-item a,
+.contact-item p {
+    color: #C4D8E1;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    color: #8CE0D8;
+    text-decoration: underline;
+}
+
+.emergency-note {
+    margin-top: 23px;
+    padding: 17px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #8CE0D8;
+}
+
+.emergency-note strong {
+    color: #8CE0D8;
+}
+
+.emergency-note p {
+    color: #E1ECF1;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* 13. Appointment Section */
+.appointment-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.appointment-info {
+    padding-top: 20px;
+}
+
+.appointment-info > p {
+    color: var(--muted);
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.appointment-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.appointment-benefit > span {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--primary-dark);
+    font-weight: 800;
+}
+
+.appointment-benefit strong {
+    color: var(--navy);
+    font-size: 15px;
+}
+
+.appointment-benefit p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.form-card {
+    padding: 35px;
+    border-radius: 17px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.form-card h3 {
+    color: var(--navy);
+    font-size: 25px;
+}
+
+.form-subtitle {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 5px 0 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 19px;
+    min-width: 0;
+}
+
+.form-group label {
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    min-height: 47px;
+    padding: 11px 13px;
+    color: var(--navy);
+    background: #FBFDFE;
+    border: 1px solid #CBDCE2;
+    border-radius: 7px;
+    font-size: 13px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #8295A0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.12);
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.consent-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 5px 0 22px;
+}
+
+.consent-group input {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    margin-top: 4px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.consent-group label {
+    color: var(--text);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    min-height: 51px;
+}
+
+.form-disclaimer {
+    margin-top: 15px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* 14. Call to Action */
+.cta-section {
+    padding: 55px 0;
+    background: linear-gradient(115deg, #087F8C, #066570);
+}
+
+.cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.cta-eyebrow {
+    color: #B7F0EA;
+    margin-bottom: 8px;
+}
+
+.cta-content h2 {
+    color: var(--white);
+    font-size: clamp(25px, 3vw, 35px);
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.cta-content p {
+    color: #D8F0EE;
+    font-size: 14px;
+}
+
+.cta-btn {
+    flex-shrink: 0;
+    background: var(--white);
+    color: var(--primary-dark);
+    border-color: var(--white);
+}
+
+.cta-btn:hover {
+    background: #EAF7F6;
+    color: var(--navy);
+    border-color: #EAF7F6;
+}
+
+/* 15. Footer */
+.footer {
+    padding: 65px 0 0;
+    background: #0B293B;
+    color: #C4D8E1;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr 1fr 1fr;
+    gap: 35px;
+    padding-bottom: 45px;
+}
+
+.footer-logo {
+    color: var(--white);
+    margin-bottom: 18px;
+}
+
+.footer-about p {
+    max-width: 290px;
+    color: #AFC4CE;
+    font-size: 13px;
+}
+
+.footer-grid h3 {
+    color: var(--white);
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.footer-grid > div > p {
+    color: #C4D8E1;
+    font-size: 13px;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.footer-grid a:not(.logo):hover {
+    color: #8CE0D8;
+}
+
+.footer-grid > div > p a {
+    color: #8CE0D8;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.footer-bottom p {
+    color: #AFC4CE;
+    font-size: 11px;
+}
+
+/* 16. Tablet Responsive Layout */
+@media (max-width: 1000px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 17px 0;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px 23px;
+    }
+
+    .hero-content {
+        gap: 35px;
+    }
+
+    .hero-image > img {
+        height: 390px;
+    }
+
+    .info-grid,
+    .facility-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid,
+    .contact-grid,
+    .appointment-grid {
+        gap: 35px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 17. Mobile Responsive Layout */
+@media (max-width: 700px) {
+    .container {
+        width: 91%;
+    }
+
+    .section {
+        padding: 62px 0;
+    }
+
+    .topbar-content {
+        flex-direction: column;
+        gap: 3px;
+        text-align: center;
+    }
+
+    .topbar p {
+        font-size: 11px;
+    }
+
+    .navbar {
+        min-height: auto;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .btn-small {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        gap: 10px 17px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 0 65px;
+    }
+
+    .hero-content,
+    .about-grid,
+    .contact-grid,
+    .appointment-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-text > p {
+        font-size: 14px;
+    }
+
+    .hero-image > img {
+        height: 330px;
+    }
+
+    .image-note {
+        left: 12px;
+        bottom: 14px;
+        padding: 12px;
+    }
+
+    .hero-points {
+        gap: 8px 13px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .info-card {
+        padding: 15px 11px;
+        gap: 9px;
+    }
+
+    .info-icon {
+        min-width: 35px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+
+    .info-card h3 {
+        font-size: 12px;
+    }
+
+    .info-card p {
+        font-size: 10px;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .about-image > img {
+        height: 340px;
+    }
+
+    .about-badge {
+        right: -5px;
+        bottom: 15px;
+    }
+
+    .department-grid,
+    .doctor-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .department-card {
+        padding: 23px;
+    }
+
+    .department-card p {
+        min-height: auto;
+    }
+
+    .doctor-card > img {
+        height: 300px;
+    }
+
+    .facility-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .facility-card {
+        padding: 20px 15px;
+    }
+
+    .facility-card h3 {
+        font-size: 15px;
+    }
+
+    .facility-card p {
+        font-size: 12px;
+    }
+
+    .contact-card {
+        padding: 25px 20px;
+    }
+
+    .hours-card {
+        padding: 20px 15px;
+    }
+
+    .hours-row {
+        font-size: 11px;
+        gap: 10px;
+    }
+
+    .form-card {
+        padding: 24px 17px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cta-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cta-btn {
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 18px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* 18. Small Mobile Screens */
+@media (max-width: 380px) {
+    .navbar {
+        align-items: flex-start;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .btn-small {
+        white-space: normal;
+        max-width: 120px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .info-grid,
+    .facility-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 19. Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

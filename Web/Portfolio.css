@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #10101e;
+    --card: #1b1b30;
+    --purple: #a78bfa;
+    --white: #ffffff;
+    --muted: #d0cfe0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+/* Navigation */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #18182b;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: var(--purple);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+/* Home */
+section {
+    padding: 75px 8%;
+    scroll-margin-top: 90px;
+}
+
+.home {
+    min-height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.home-content {
+    flex: 1;
+    min-width: 250px;
+    animation: slideIn 1s ease;
+}
+
+.welcome {
+    color: var(--purple);
+    letter-spacing: 2px;
+}
+
+.home h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    margin: 10px 0;
+}
+
+.home h2 {
+    color: var(--purple);
+    margin-bottom: 15px;
+}
+
+.home-content > p:not(.welcome) {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.profile-circle {
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+    border: 4px solid var(--purple);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--card);
+    box-shadow: 0 0 30px #a78bfa55;
+    animation: float 3s ease-in-out infinite;
+}
+
+.profile-circle span {
+    font-size: 90px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--purple);
+    color: #171329;
+    padding: 11px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: white;
+}
+
+/* Headings */
+.heading {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.heading span {
+    color: var(--purple);
+}
+
+.alternate {
+    background: #17172a;
+}
+
+/* Content */
+.content-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 28px;
+    background: var(--card);
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #393553;
+}
+
+.content-box p {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.content-box h3 {
+    color: var(--purple);
+    margin-top: 15px;
+}
+
+/* Cards */
+.card-container {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #393553;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: var(--purple);
+}
+
+.card h3 {
+    color: var(--purple);
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #18182b;
+    color: var(--muted);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 650px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .home {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .profile-circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .profile-circle span {
+        font-size: 65px;
+    }
+
+    section {
+        padding: 50px 6%;
+    }
+}
